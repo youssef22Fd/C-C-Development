@@ -3,7 +3,7 @@
 
 int main()
 {
-    int a = rand() % 20 + 1; 
+    int a = rand() % 30 + 1; 
     int user_number;
 
     while(1)
