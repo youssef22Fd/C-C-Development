@@ -5,6 +5,7 @@
 char* reverse(char myString[]);
 int counting_vowels(char myString[]);
 void string_palindrome(char myString[]);
+
 char myReverseString[30];
 
 int main() {
@@ -35,7 +36,6 @@ char* reverse (char myString[])
    return myReverseString;
 }
 
-
 int counting_vowels(char myString[])
 {    
     int count = 0;
@@ -64,10 +64,10 @@ void string_palindrome(char myString[])
         }
         printf("The String is palindrome");  
         break;
+  
     }
     
 } 
-
 
 
 
