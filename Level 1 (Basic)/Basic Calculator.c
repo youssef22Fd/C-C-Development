@@ -5,7 +5,6 @@ int main(){
         int8_t code;
 	int32_t n1, n2;
 	printf("Enter the code: ");
-	fflush(stdout);
 	scanf("%c", &code);
 
 	switch (code){
