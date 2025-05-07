@@ -6,7 +6,7 @@ typedef struct
     char name[50];
     int ID;
     float grade;
-    char date_of_birth[10];
+    char date_of_birth[11];
     char branch[50];
     
 }student_record_t;
@@ -74,7 +74,7 @@ void Display_records(student_record_t *record, int number_of_records)
         }
     }
     if(!record_valid)
-       printf("No records foun\n");
+       printf("No records found\n");
 }
 
 
@@ -107,26 +107,24 @@ int Add_new_record(student_record_t *record, int number_of_records)
         {
             add_status = 1;
             record[i].ID = student_ID;
-
+            
             printf("***********************************\n");
             printf("Enter the student Name: ");
-            scanf("%49[^\n]", record[i].name); 
-            getchar();
-            
+            scanf(" %49[^\n]", record[i].name);
+
             printf("***********************************\n");
-            printf("Enter the student date of birth: ");
-            scanf("%s", record[i].date_of_birth);
-            getchar();
-            
+            printf("Enter the student date of birthday: ");
+            scanf(" %10s", record[i].date_of_birth);
+
             printf("***********************************\n");
             printf("Enter the student Branch: ");
-            scanf("%50[^\n]", record[i].branch);  
             getchar();
-            
+            scanf(" %49[^\n]", record[i].branch);
+
             printf("***********************************\n");
             printf("Enter the student grade: ");
             scanf("%f", &record[i].grade);
-            getchar();
+
         }
         else
             printf("Student ID already exists\n");
