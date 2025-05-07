@@ -5,7 +5,7 @@ typedef struct
 {
     char name[50];
     int ID;
-    int grade;
+    float grade;
     char date_of_birth[10];
     char branch[50];
     
@@ -27,17 +27,17 @@ int Delete_record(student_record_t *record, int number_of_records);
 int main()
 {
     int menu_code;
-    int continue_record = 1;
+    int continue_record = 0;
     
-    while(continue_record)
+    while(!continue_record)
     {
         display_menu();
         menu_code = read_menu();
-        if(menu_code)
+        if(menu_code != 4)
             menu_bar(menu_code);
         else 
         {
-            continue_record = 0;
+            continue_record = 1;
             printf("Exiting application\n");
             
         }
@@ -52,28 +52,29 @@ void display_menu()
     printf("Display all records click on:    1\n");
     printf("Add a new record click on:       2\n");
     printf("Delete a record click on:        3\n");
-    printf("Exit the application click on:   0\n");
-    printf("Enter your application here:     ");
+    printf("Exit the application click on:   4\n");
+    printf("Enter your application here: ");
 }
 
 void Display_records(student_record_t *record, int number_of_records)
 {
-    int record_valid = 0;
+    int record_valid  = 0;
     for(int i=0; i<number_of_records; i++)
     {
         if(record[i].ID)
         {
             record_valid = 1;
-            printf("*****************************\n");
-            printf("  student Name            : %s\n",record[i].name);
+            printf("***********************************\n");
             printf("  student ID              : %u\n",record[i].ID);
-            printf("  student Branch          : %s\n",record[i].branch);
+            printf("  student Name            : %s\n",record[i].name);
             printf("  student Date of birth   : %s\n",record[i].date_of_birth);
-            printf("*******************************\n");            
+            printf("  student Branch          : %s\n",record[i].branch);
+            printf("  student grade           : %0.2f\n",record[i].grade);
+            printf("***********************************\n");
         }
     }
     if(!record_valid)
-       printf("No records found\n");
+       printf("No records foun\n");
 }
 
 
@@ -82,43 +83,60 @@ int check_student_ID(int student_ID, student_record_t *record, int number_of_rec
     for(int i=0; i<number_of_records; i++)
     {
         if(record[i].ID == student_ID)
-            return 1;
+        {
+          return 1;
+          break;
+        }  
     }
     return 0;
 }
+
 
 int Add_new_record(student_record_t *record, int number_of_records)
 {   
     int add_status = 0;
     int student_ID;
-    for(int i=0; i<number_of_records; i++)
+
+    for (int i = 0; i < number_of_records; i++)
     {   
         printf("Enter the student ID: ");
-        scanf("%d\n", &student_ID);
-        if(check_student_ID(student_ID, record, number_of_records))
+        scanf("%d", &student_ID);
+        getchar(); 
+
+        if (!check_student_ID(student_ID, record, number_of_records))
         {
-            printf("Student ID already exit\n");
-            return 0;
-        } 
-        
-        add_status = 1;
-        record[i].ID = student_ID;  
-        
-        printf("Enter the student Name: ");
-        scanf("%49[^\n]s",record[i].name);
-        getchar();
-        
-        printf("Enter the student date of birth : ");
-        scanf("%[^\n]s",record[i].date_of_birth);
-        getchar();
-        
-        printf("Enter the student Branch: ");
-        scanf("%49[^\n]s",record[i].branch);
-        getchar();
+            add_status = 1;
+            record[i].ID = student_ID;
+
+            printf("***********************************\n");
+            printf("Enter the student Name: ");
+            scanf("%49[^\n]", record[i].name); 
+            getchar();
+            
+            printf("***********************************\n");
+            printf("Enter the student date of birth: ");
+            scanf("%s", record[i].date_of_birth);
+            getchar();
+            
+            printf("***********************************\n");
+            printf("Enter the student Branch: ");
+            scanf("%50[^\n]", record[i].branch);  
+            getchar();
+            
+            printf("***********************************\n");
+            printf("Enter the student grade: ");
+            scanf("%f", &record[i].grade);
+            getchar();
+        }
+        else
+            printf("Student ID already exists\n");
+            
         break;
     }
+
     return add_status;
 }
+
 
 
 int Delete_record(student_record_t *record, int number_of_records)
@@ -127,7 +145,7 @@ int Delete_record(student_record_t *record, int number_of_records)
     int student_ID;
     
     printf("Enter the student ID: ");
-    scanf("%d\n", &student_ID);
+    scanf("%d", &student_ID);
     
     for(int i=0; i<number_of_records; i++)
     {
@@ -135,6 +153,7 @@ int Delete_record(student_record_t *record, int number_of_records)
         {
             delet_status = 1;
             record[i].ID = 0;
+            record[i].grade = 0;
             strcpy(record[i].name, "");
             strcpy(record[i].branch, "");
             strcpy(record[i].date_of_birth, "");
@@ -179,15 +198,3 @@ void menu_bar(int menu_code)
         
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
