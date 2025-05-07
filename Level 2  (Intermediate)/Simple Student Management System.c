@@ -21,30 +21,33 @@ void Display_records(student_record_t *record, int number_of_records);
 int check_student_ID(int student_ID, student_record_t *record, int number_of_records);
 int Add_new_record(student_record_t *record, int number_of_records);
 int Delete_record(student_record_t *record, int number_of_records);
-
+void Load_records_from_file(student_record_t *record, int *number_of_records);
+void Save_records_to_file(student_record_t *record, int number_of_records);
 
 
 int main()
 {
     int menu_code;
     int continue_record = 0;
-    
-    while(!continue_record)
+
+    Load_records_from_file(students, &number_of_records);
+
+    while (!continue_record)
     {
         display_menu();
         menu_code = read_menu();
-        if(menu_code != 4)
+        if (menu_code != 4)
             menu_bar(menu_code);
         else 
         {
             continue_record = 1;
-            printf("Exiting application\n");
-            
+            printf("Saving records and exiting application...\n");
+            Save_records_to_file(students, number_of_records);
         }
-        
     }
     return 0;
 }
+
 
 
 void display_menu()
@@ -195,4 +198,55 @@ void menu_bar(int menu_code)
             printf("input invalid\n");
         
     }
+}
+
+
+void Save_records_to_file(student_record_t *record, int number_of_records)
+{
+    FILE *file = fopen("students.txt", "w");
+    if (!file) {
+        printf("Error opening file for writing.\n");
+        return;
+    }
+
+    for (int i = 0; i < number_of_records; i++) {
+        if (record[i].ID != 0) {
+            fprintf(file, "%d,%s,%.2f,%s,%s\n",
+                record[i].ID,
+                record[i].name,
+                record[i].grade,
+                record[i].date_of_birth,
+                record[i].branch);
+        }
+    }
+
+    fclose(file);
+    printf("Records saved to file.\n");
+}
+
+
+void Load_records_from_file(student_record_t *record, int *number_of_records)
+{
+    FILE *file = fopen("students.txt", "r");
+    if (!file) {
+        printf("No saved records found.\n");
+        return;
+    }
+
+    int i = 0;
+    while (fscanf(file, "%d,%49[^,],%f,%10[^,],%49[^\n]",
+                  &record[i].ID,
+                  record[i].name,
+                  &record[i].grade,
+                  record[i].date_of_birth,
+                  record[i].branch) == 5)
+    {
+        i++;
+        if (i >= *number_of_records)
+           break;
+    }
+
+    *number_of_records = i;
+    fclose(file);
+    printf("Records loaded from file.\n");
 }
