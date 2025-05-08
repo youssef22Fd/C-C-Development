@@ -6,25 +6,24 @@ char* reverse(char myString[]);
 int counting_vowels(char myString[]);
 void string_palindrome(char myString[]);
 
-char myReverseString[30];
+char myReverseString[100];
 
 int main() {
-    char myString[30];
+    
+    char myString[100];
     printf("Enter your string: ");
-    scanf("%s",myString);
-    char* myReverseString = reverse(myString);
-    printf("Reversed string is: %s\n", myReverseString);
+    scanf("%99[^\n]",myString);
+    char* ReverseString = reverse(myString);
+    printf("Reversed string is: %s\n", ReverseString);
     int count = counting_vowels(myString);
     printf("the number of vowels is: %d\n", count);
     string_palindrome(myString);
     return 0;
 }
 
-
 char* reverse (char myString[])
 {   
     int n = strlen(myString);
-    
     strcpy(myReverseString, myString);
     
     for(int i=0; i< n/2; i++)
@@ -68,7 +67,3 @@ void string_palindrome(char myString[])
     }
     
 } 
-
-
-
-
