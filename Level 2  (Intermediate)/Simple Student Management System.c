@@ -73,11 +73,11 @@ void Display_records(student_record_t *record, int number_of_records)
             printf("  student Date of birth   : %s\n",record[i].date_of_birth);
             printf("  student Branch          : %s\n",record[i].branch);
             printf("  student grade           : %0.2f\n",record[i].grade);
-            printf("***********************************\n");
+            printf("***********************************\n\n");
         }
     }
     if(!record_valid)
-       printf("No records found\n");
+       printf("No records found\n\n");
 }
 
 
@@ -130,7 +130,7 @@ int Add_new_record(student_record_t *record, int number_of_records)
 
         }
         else
-            printf("Student ID already exists\n");
+            printf("Student ID already exists\n\n");
             
         break;
     }
@@ -178,24 +178,24 @@ void menu_bar(int menu_code)
     switch(menu_code)
     {
         case 1:
-            printf("Displaying all students record\n");
+            printf("\nDisplaying all students record\n");
             Display_records(students, number_of_records);
             break;
         
         case 2:
-            printf("Add new record\n");
+            printf("\nAdd new record\n");
             status = Add_new_record(students, number_of_records);
-            status ? printf("Record added successfully\n"):printf("Record added unsuccessfully\n");
+            status ? printf("Record added successfully\n\n"):printf("Record added unsuccessfully\n\n");
             break;
             
         case 3:
-            printf("Delet a record\n");
+            printf("\nDelet a record\n");
             status = Delete_record(students, number_of_records);
-            status ? printf("Record deleted successfully\n"):printf("Record deleted unsuccessfully\n");
+            status ? printf("Record deleted successfully\n\n"):printf("Record deleted unsuccessfully\n\n");
             break;
                        
         default:
-            printf("input invalid\n");
+            printf("input invalid\n\n");
         
     }
 }
@@ -229,7 +229,7 @@ void Load_records_from_file(student_record_t *record, int *number_of_records)
 {
     FILE *file = fopen("students.txt", "r");
     if (!file) {
-        printf("No saved records found.\n");
+        printf("No saved records found\n");
         return;
     }
 
