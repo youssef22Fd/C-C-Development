@@ -4,7 +4,7 @@
 
 int main()
 {
-    srand(time(NULL));
+    srand(time(0));
     int a = rand() % 50 + 1; 
     int user_number;
 
