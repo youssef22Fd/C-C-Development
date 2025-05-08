@@ -1,18 +1,48 @@
+/*
+ * Student Records Management System
+ *
+ * This program allows the user to manage a set of student records through a text-based interface.
+ * The features are :
+ * - View all student records
+ * - Add a new student record with duplicate ID checking
+ * - Delete a student record by setting their ID to 0.
+ * - Load student records from a file at startup
+ * - Save records to a file on exit
+ * Each student record includes:
+ * - ID (unique identifier)
+ * - Name
+ * - Date of birth
+ * - Branch (field of study)
+ * - Grade 
+ * Functions:
+ * - display_menu(): Displays user options
+ * - read_menu(): Reads the user's choice
+ * - menu_bar(): Executes logic based on menu selection
+ * - Display_records(): Prints all non-empty student records
+ * - check_student_ID(): Checks for duplicate student ID
+ * - Add_new_record(): Prompts and adds a new record
+ * - Delete_record(): Removes a record by resetting its fields
+ * - Save_records_to_file(): Saves records to "students.txt"
+ * - Load_records_from_file(): Loads existing records from "students.txt"
+ *
+ */
+
+
+
 #include <stdio.h>
 #include <string.h>
 
 typedef struct
 {
-    char name[50];
     int ID;
-    float grade;
+    char name[50];
     char date_of_birth[11];
     char branch[50];
-    
+    float grade;
 }student_record_t;
 
-int number_of_records = 30;
-student_record_t students[30];
+int number_of_records = 50;
+student_record_t students[50];
 
 void display_menu();
 int read_menu();
@@ -23,7 +53,6 @@ int Add_new_record(student_record_t *record, int number_of_records);
 int Delete_record(student_record_t *record, int number_of_records);
 void Load_records_from_file(student_record_t *record, int *number_of_records);
 void Save_records_to_file(student_record_t *record, int number_of_records);
-
 
 int main()
 {
