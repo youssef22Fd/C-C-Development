@@ -1,5 +1,5 @@
 /*
- * Basic Calculator
+ * Basic Calculator program
  *
  * This program allows the user to perform basic arithmetic operations
  * (addition, subtraction, multiplication, and division) on two floating-point numbers.
