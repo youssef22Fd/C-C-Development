@@ -4,28 +4,28 @@
 int main(){
 	
         int8_t code;
-	int32_t n1, n2;
+	double n1, n2;
 	
 	printf("Enter the code: ");
 	scanf("%c", &code);
 	
 	printf("Enter the numbers: ");
-        scanf("%d %d", &n1, &n2);
+        scanf("%lf %lf", &n1, &n2);
 	switch (code){
 		
 	    /* Addition */
 	    case '+':
-	        	printf("the add of %d and %d is %d ",n1, n2, n1 + n2);
+	        	printf("the add of %lf and %lf is %.2lf ",n1, n2, n1 + n2);
 		        break;
 
 	    /* subtraction */
 	    case '-':
-	        	printf("the sub of %d and %d is %d ",n1, n2, n1 - n2);
+	        	printf("the sub of %lf and %lf is %.2lf ",n1, n2, n1 - n2);
 		        break;
 
            /* multiplication */
 	   case '*':
-	        	printf("the mult of %d by %d is %d ",n1, n2, n1 * n2);
+	        	printf("the mult of %lf by %lf is %.2lf ",n1, n2, n1 * n2);
 		        break;
 
            /* division */
@@ -33,11 +33,10 @@ int main(){
 	   
 	        	if(n2 == 0)
 	                 printf("the division by zero is undefined\n");
-	        	printf("the div of %d by %d is %d ",n1, n2, n1 / n2);
+	        	printf("the div of %lf by %lf is %.2lf ",n1, n2, n1 / n2);
 		        break;
 
 	   default:
 		        printf("invalid operation\n");
 	}
-
 }
