@@ -6,7 +6,6 @@
  *  - If the guess is lower than the target number, it informs the user it's too low.
  *  - If the guess is higher than the target number, it informs the user it's too high.
  *  - If the guess matches the target, it congratulates the user and exits.
- *
  * The random number generator is seeded with the current time using time(0)
  * to ensure different outcomes on each execution.
  *
