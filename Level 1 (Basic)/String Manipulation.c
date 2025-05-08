@@ -1,3 +1,18 @@
+/*
+ * String Manipulation Program
+ *
+ * This program performs three operations on a user-input string:
+ * 1. Reverses the string and displays the result.
+ * 2. Counts and prints the number of vowels in the string.
+ * 3. Checks whether the string is a palindrome wich means reads the same forward and backward).
+ * Functions:
+ * - reverse(): Reverses the input string and returns it.
+ * - counting_vowels(): Counts the number of vowels in the input string, after converting characters to lowercase.
+ * - string_palindrome(): Compares the input string with its reverse to check for palindrome.
+ *
+ */
+
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
