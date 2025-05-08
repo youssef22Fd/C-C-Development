@@ -6,7 +6,6 @@
  * The user is prompted to enter an operation code ('+', '-', '*', '/') followed by two numbers.
  * The program then performs the selected operation and displays the result.
  * It also includes error handling for division by zero and invalid operation codes.
- *
  */
 
 #include <stdio.h>
