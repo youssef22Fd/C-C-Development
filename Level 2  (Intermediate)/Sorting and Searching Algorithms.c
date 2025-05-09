@@ -22,11 +22,11 @@ void Bubble_sort(int arr[])
 
 int partition(int arr[], int low, int high)
 {   
-    int n = sizeof(arr)/sizeof(int);
+    int pivot_value = arr[high];
     int i = low;
-    for(int j=low+1; j<high; j++)
+    for(int j=low; j<high; j++)
     {
-        if(arr[j] <= arr[high])
+        if(arr[j] <= pivot_value)
         {
             int temp = arr[i];
             arr[i] = arr[j];
@@ -34,11 +34,9 @@ int partition(int arr[], int low, int high)
             i++;
         }
     }
-    
-    int temp = arr[i];
+    int tmp = arr[i];
     arr[i] = arr[high];
-    arr[high] = temp;
-    
+    arr[high] = tmp;
     return i;
 }
 
@@ -52,6 +50,24 @@ void quickSort(int arr[], int low, int high)
         quickSort(arr, pivot_index + 1, high);      
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
