@@ -53,14 +53,14 @@ void quickSort(int arr[], int low, int high)
 
 
 
-void linear_search(int arr[], int value, int length)
+void linear_search(int arr[], int search_value, int length)
 {
     int i = 0;
     for(i=0; i<length; i++)
     {
-        if(arr[i] == value)
+        if(arr[i] == search_value)
         {
-            printf("the value %d found at position %d\n", value, i+1);
+            printf("the value %d found at position %d\n", search_value, i+1);
             break;
         }
     }
