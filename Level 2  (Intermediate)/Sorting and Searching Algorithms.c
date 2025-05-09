@@ -69,6 +69,27 @@ void linear_search(int arr[], int search_value, int length)
 }
 
 
+void binary_search(int arr[], int search_value, int length)
+{
+    int first = 0;
+    int last = length - 1;
+    int middle;
+
+    while (first <= last) {
+        middle = (first + last) / 2;
+
+        if (arr[middle] < search_value) {
+            first = middle + 1;
+        } else if (arr[middle] == search_value)
+        {
+            printf("The value %d found at the position %d\n", search_value, middle + 1);
+            return;
+        } 
+        else 
+            last = middle - 1;
+    }
+    printf("The value %d is not in this array\n", search_value);
+}
 
 
 
