@@ -1,7 +1,37 @@
+/*
+ * Sorting and Searching Algorithms Menu Program
+ *
+ * This program allows the user to interactively perform sorting and searching
+ * operations on a dynamic array of integers through a text-based menu system.
+ * Features:
+ * - Sort array using Bubble Sort
+ * - Sort array using Quick Sort
+ * - Search for an element using Linear Search
+ * - Search for an element using Binary Search (auto-sorts using Quick Sort)
+ * - Display time taken for each operation
+ * - Display time complexity of each algorithm on exit
+ * Functions:
+ * - display_menu(): Displays the available operations
+ * - read_menu(): Reads and returns the user’s menu selection
+ * - menu_bar(): Handles the logic for selected operations
+ * - printArray(): Prints the current array
+ * - Bubble_sort(): Implements Bubble Sort algorithm
+ * - quickSort(): Implements Quick Sort using recursion
+ * - partition(): Helper for Quick Sort (Lomuto partition scheme)
+ * - linear_search(): Searches for a value using Linear Search
+ * - binary_search(): Searches for a value using Binary Search (on a sorted array)
+ * - compareTimeComplexity(): Displays Big-O time complexities of algorithms
+ *
+ * Note that the Binary Search requires the array to be sorted and is automatically preceded by Quick Sort 
+ * and Execution time is measured using <time.h>
+ *
+ */
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 
 
 void display_menu();
