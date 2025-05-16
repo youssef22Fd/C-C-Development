@@ -8,12 +8,14 @@
  * - Delete a student record by setting their ID to 0.
  * - Load student records from a file at startup
  * - Save records to a file on exit
+ *
  * Each student record includes:
  * - ID (unique identifier)
  * - Name
  * - Date of birth
  * - Branch (field of study)
  * - Grade 
+ *
  * Functions:
  * - display_menu(): Displays user options
  * - read_menu(): Reads the user's choice
