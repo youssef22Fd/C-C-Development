@@ -25,7 +25,7 @@ void push(struct StackNode** top, int data) {
     struct StackNode* newNode = createStackNode(data);
     newNode->next = *top;
     *top = newNode;
-    printf("%d pushed to stack\n", data);
+    printf("%d pushed to stack\n\n", data);
 }
 
 int pop(struct StackNode** top) {
@@ -110,41 +110,43 @@ int main() {
     int choice, data;
 
     while (1) {
-        printf("\nMenu:\n");
-        printf("1. Push to Stack\n");
-        printf("2. Pop from Stack\n");
-        printf("3. Display Stack\n");
-        printf("4. Enqueue to Queue\n");
-        printf("5. Dequeue from Queue\n");
-        printf("6. Display Queue\n");
-        printf("7. Exit\n");
+
+        printf("**************************************\n");
+        printf("  Push to Stack click on       :     1\n");
+        printf("  Pop from Stack click on      :     2\n");
+        printf("  Display the Stack click on   :     3\n");
+        printf("  Enqueue to Queue click on    :     4\n");
+        printf("  Dequeue from Queue click on  :     5\n");
+        printf("  Display Queue here click on  :     6\n");
+        printf("  Exit application click on    :     7\n");
+        printf("**************************************\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                printf("Enter data to push: ");
+                printf("\nEnter data to push: ");
                 scanf("%d", &data);
                 push(&stackTop, data);
                 break;
-            case 2:
+            case 2: 
                 data = pop(&stackTop);
                 if (data != -1) {
-                    printf("Popped from stack: %d\n", data);
+                    printf("\nPopped from stack: %d\n", data);
                 }
                 break;
             case 3:
                 displayStack(stackTop);
                 break;
             case 4:
-                printf("Enter data to enqueue: ");
+                printf("\nEnter data to enqueue: ");
                 scanf("%d", &data);
                 enqueue(&queueFront, &queueRear, data);
                 break;
             case 5:
                 data = dequeue(&queueFront);
                 if (data != -1) {
-                    printf("Dequeued from queue: %d\n", data);
+                    printf("\nDequeued from queue: %d\n", data);
                 }
                 break;
             case 6:
