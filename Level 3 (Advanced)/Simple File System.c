@@ -17,12 +17,6 @@
  * - readFile()    : Reads and displays contents from a specified file
  * - deleteFile()  : Deletes a specified file from the system
  *
- * Notes:
- * - Uses fgets() for safe string input
- * - Handles newline characters in input
- * - Provides error messages for file I/O issues using perror()
- * - Filename and content length are limited by MAX_FILENAME and MAX_CONTENT
- *
  * Constants:
  * - MAX_FILENAME : Maximum allowed characters for the filename
  * - MAX_CONTENT  : Maximum allowed characters for file content
