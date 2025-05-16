@@ -1,3 +1,31 @@
+/*
+ * Stack and Queue Operations Program
+ *
+ * This program allows the user to interactively perform basic operations
+ * on a Stack and a Queue implemented using singly linked lists.
+ * The user can push, pop, and display elements of the stack, as well as
+ * enqueue, dequeue, and display elements of the queue.
+ *
+ * Functions:
+ * - createStackNode()    : Allocates a new node for the stack
+ * - push()               : Pushes a value onto the stack
+ * - pop()                : Pops the top value from the stack
+ * - displayStack()       : Displays all elements in the stack
+ * - createQueueNode()    : Allocates a new node for the queue
+ * - enqueue()            : Adds a value to the end of the queue
+ * - dequeue()            : Removes the front value from the queue
+ * - displayQueue()       : Displays all elements in the queue
+ *
+ * Note:
+ * - Underflow conditions are handled for both stack and queue
+ * - Memory is dynamically allocated and freed properly to avoid leaks
+ * - The program uses a loop with a user-friendly text menu
+ *
+ */
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
