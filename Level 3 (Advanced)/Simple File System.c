@@ -5,7 +5,8 @@
 #define MAX_FILENAME 100
 #define MAX_CONTENT 1024
 
-// Function prototypes
+
+
 void createFile();
 void readFile();
 void deleteFile();
@@ -16,9 +17,8 @@ int main() {
 
     while (1) {
         displayMenu();
-        printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar(); // Consume newline character left by scanf
+        getchar(); 
 
         switch (choice) {
             case 1:
@@ -42,51 +42,54 @@ int main() {
 }
 
 void displayMenu() {
-    printf("\n--- Simple File System Simulation ---\n");
-    printf("1. Create a file\n");
-    printf("2. Read a file\n");
-    printf("3. Delete a file\n");
-    printf("4. Exit\n");
+
+    printf("*******************************************\n");
+    printf("   Create File click on         :        1\n");
+    printf("   Read a File click on         :        2\n");
+    printf("   Delete a File click on       :        3\n");
+    printf("   Exit the application click on:        4\n");
+    printf("*******************************************\n");
+    printf("Enter your application here: ");
 }
 
 void createFile() {
     char filename[MAX_FILENAME];
     char content[MAX_CONTENT];
 
-    printf("Enter the filename to create: ");
+    printf("\nEnter the filename to create: ");
     fgets(filename, sizeof(filename), stdin);
-    filename[strcspn(filename, "\n")] = 0; // Remove newline character
+    filename[strcspn(filename, "\n")] = 0; 
 
     printf("Enter the content to write in the file: ");
     fgets(content, sizeof(content), stdin);
-    content[strcspn(content, "\n")] = 0; // Remove newline character
+    content[strcspn(content, "\n")] = 0;
 
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
-        perror("Error creating file");
+        perror("Error creating file\n");
         return;
     }
 
     fprintf(file, "%s\n", content);
     fclose(file);
-    printf("File '%s' created successfully.\n", filename);
+    printf("\nFile %s created successfully.\n", filename);
 }
 
 void readFile() {
     char filename[MAX_FILENAME];
     char content[MAX_CONTENT];
 
-    printf("Enter the filename to read: ");
+    printf("\nEnter the filename to read: ");
     fgets(filename, sizeof(filename), stdin);
-    filename[strcspn(filename, "\n")] = 0; // Remove newline character
+    filename[strcspn(filename, "\n")] = 0; 
 
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        perror("Error reading file");
+        perror("Error reading file\n");
         return;
     }
 
-    printf("Contents of '%s':\n", filename);
+    printf("Contents of %s :\n", filename);
     while (fgets(content, sizeof(content), file) != NULL) {
         printf("%s", content);
     }
@@ -96,13 +99,13 @@ void readFile() {
 void deleteFile() {
     char filename[MAX_FILENAME];
 
-    printf("Enter the filename to delete: ");
+    printf("\nEnter the filename to delete: ");
     fgets(filename, sizeof(filename), stdin);
-    filename[strcspn(filename, "\n")] = 0; // Remove newline character
+    filename[strcspn(filename, "\n")] = 0;
 
     if (remove(filename) == 0) {
-        printf("File '%s' deleted successfully.\n", filename);
+        printf("\nFile %s deleted successfully.\n", filename);
     } else {
-        perror("Error deleting file");
+        perror("Error deleting file\n");
     }
 }
