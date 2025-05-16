@@ -1,3 +1,38 @@
+/*
+ * Producer-Consumer Problem Using Pthreads
+ *
+ * This program demonstrates the classic Producer-Consumer synchronization problem
+ * using POSIX threads (pthreads), mutexes, and condition variables.
+ *
+ * A fixed-size buffer is shared between a producer thread and a consumer thread.
+ * The producer generates data items and places them in the buffer, while the
+ * consumer removes and processes these items. Synchronization is used to ensure
+ * safe concurrent access and avoid buffer overflows or underflows.
+ *
+ * Features:
+ *  Implements a bounded buffer of fixed size (BUFFER_SIZE)
+ *  One producer and one consumer thread operate on the buffer
+ *  Uses mutexes to prevent race conditions
+ *  Uses condition variables to manage buffer full and empty states
+ *  Simulates production and consumption delays using `usleep()`
+ *
+ * Constants:
+ *  BUFFER_SIZE: Maximum number of items the buffer can hold
+ *  NUM_ITEMS  : Total number of items to be produced and consumed
+ *
+ * Functions:
+ *  producer(): Produces NUM_ITEMS integers and places them into the buffer
+ *  consumer(): Consumes NUM_ITEMS integers from the buffer
+ *
+ * Synchronization Primitives:
+ *  pthread_mutex_t mutex      : Ensures mutual exclusion during buffer access
+ *  pthread_cond_t not_full    : Signals when buffer is not full (producer can add)
+ *  pthread_cond_t not_empty   : Signals when buffer is not empty (consumer can read)
+ *
+ */
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
