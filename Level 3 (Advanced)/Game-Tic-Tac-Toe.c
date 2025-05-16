@@ -1,3 +1,31 @@
+/*
+ * Tic-Tac-Toe Game (Console-Based)
+ *
+ * This program implements a simple 2-player Tic-Tac-Toe game in the console using C.
+ * Players take turns entering their moves on a 3x3 grid until one wins or the game ends in a draw.
+ *
+ * Features:
+ *  3x3 character board initialized with empty spaces
+ *  Alternating turns between Player X and Player O
+ *  Input validation to prevent overwriting or invalid positions
+ *  Automatic winner detection (rows, columns, diagonals)
+ *  Draw detection when the board is full with no winner
+ *
+ * Functions:
+ *  print_board()     : Displays the current state of the game board
+ *  check_winner()    : Checks if there is a winner and returns 'X' or 'O'
+ *  is_draw()         : Checks if all cells are filled without a winner
+ *
+ * Game Flow:
+ *  Players enter their moves as (row, column) coordinates
+ *  After each move, the board is printed and checked for win/draw
+ *  The game ends when a player wins or when it results in a draw
+ *
+ */
+
+
+
+
 #include <stdio.h>
 
 #define SIZE 3
