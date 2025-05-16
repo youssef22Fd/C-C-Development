@@ -1,3 +1,42 @@
+/*
+ * Simple File Management Program
+ *
+ * This program provides a menu-driven interface to perform basic file operations:
+ * creating, reading, and deleting text files. It allows users to interact with the
+ * filesystem in a simple and intuitive way using standard C file I/O functions.
+ *
+ * Features:
+ * - Create a file with custom content entered by the user
+ * - Read and display the contents of an existing file
+ * - Delete a file by specifying its name
+ * - Menu-based system for selecting operations
+ *
+ * Functions:
+ * - displayMenu() : Displays the available file operations
+ * - createFile()  : Prompts user to create and write to a new file
+ * - readFile()    : Reads and displays contents from a specified file
+ * - deleteFile()  : Deletes a specified file from the system
+ *
+ * Notes:
+ * - Uses fgets() for safe string input
+ * - Handles newline characters in input
+ * - Provides error messages for file I/O issues using perror()
+ * - Filename and content length are limited by MAX_FILENAME and MAX_CONTENT
+ *
+ * Constants:
+ * - MAX_FILENAME : Maximum allowed characters for the filename
+ * - MAX_CONTENT  : Maximum allowed characters for file content
+ *
+ * Developed in standard C using <stdio.h>, <stdlib.h>, and <string.h>
+ */
+
+
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
