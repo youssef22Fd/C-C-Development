@@ -21,7 +21,6 @@
  * - MAX_FILENAME : Maximum allowed characters for the filename
  * - MAX_CONTENT  : Maximum allowed characters for file content
  *
- * Developed in standard C using <stdio.h>, <stdlib.h>, and <string.h>
  */
 
 
