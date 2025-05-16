@@ -3,6 +3,7 @@
  *
  * This program allows the user to interactively perform sorting and searching
  * operations on a dynamic array of integers through a text-based menu system.
+ *
  * Features:
  * - Sort array using Bubble Sort
  * - Sort array using Quick Sort
@@ -10,6 +11,7 @@
  * - Search for an element using Binary Search (auto-sorts using Quick Sort)
  * - Display time taken for each operation
  * - Display time complexity of each algorithm on exit
+ *
  * Functions:
  * - display_menu(): Displays the available operations
  * - read_menu(): Reads and returns the user’s menu selection
