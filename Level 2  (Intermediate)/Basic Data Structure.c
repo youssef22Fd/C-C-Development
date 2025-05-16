@@ -16,10 +16,8 @@
  * - dequeue()            : Removes the front value from the queue
  * - displayQueue()       : Displays all elements in the queue
  *
- * Note:
- * - Underflow conditions are handled for both stack and queue
- * - Memory is dynamically allocated and freed properly to avoid leaks
- * - The program uses a loop with a user-friendly text menu
+ * Underflow conditions are handled for both stack and queue
+ * Memory is dynamically allocated and freed properly to avoid leaks
  *
  */
 
